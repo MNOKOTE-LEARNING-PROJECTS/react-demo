@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 
-// import Drawer from "@mui/material/Drawer";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Drawer from "@mui/material/Drawer";
 
 import { Link } from "react-router-dom";
 import { SidebarData } from "../Components/SideBarData";
 import { IconContext } from "react-icons";
 import "../Components/Navbar.css";
 import "../App.css";
+
+const drawerWidth = 240;
 
 export default class container extends Component {
   constructor(props) {
@@ -29,41 +29,45 @@ export default class container extends Component {
 
   sidebar = () => {
     return (
-      <SwipeableDrawer
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            boxSizing: "border-box",
+          },
+        }}
+        variant="permanent"
         open={this.state.menuOpen}
         onClose={() => this.setState({ menuOpen: !this.state.menuOpen })}
       >
         <IconContext.Provider value={{ color: "#fff" }}>
           <div className="navbar">
+            <div className="app-name">{"APP NAME"}</div>
             <Link to="#" className="menu-bars">
-              <FaIcons.FaBars />
+              {/* <AiIcons.AiOutlineClose
+                onClick={() =>
+                  this.setState({ menuOpen: !this.state.menuOpen })
+                }
+              /> */}
             </Link>
           </div>
-          <nav className={this.state.menuOpen ? "nav-menu active" : "nav-menu"}>
-            <ul className="nav-menu-items">
-              <li className="nambar-toggle">
-                <Link to="#" className="menu-bars">
-                  <AiIcons.AiOutlineClose
-                    onClick={() =>
-                      this.setState({ menuOpen: !this.state.menuOpen })
-                    }
-                  />
-                </Link>
-              </li>
-              {SidebarData.map((item, index) => {
-                return (
-                  <li key={index} className={item.cName}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <ul className="nav-menu-items ">
+            <li className="nambar-toggle"></li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </IconContext.Provider>
-      </SwipeableDrawer>
+      </Drawer>
     );
   };
 
@@ -96,7 +100,7 @@ export default class container extends Component {
       <Toolbar
         style={{
           position: "static",
-          background: "#525252",
+          background: "#1a83ff",
           height: "8vh",
           color: "white",
         }}
@@ -112,7 +116,7 @@ export default class container extends Component {
         {this.sidebar()}
         {this.header()}
         <div style={{ height: "100vh" }}>{this.props.children}</div>
-        {this.footer()}
+        {/* {this.footer()} */}
       </div>
     );
   }
