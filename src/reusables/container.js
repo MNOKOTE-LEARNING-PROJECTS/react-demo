@@ -44,7 +44,7 @@ export default class container extends Component {
       >
         <IconContext.Provider value={{ color: "#fff" }}>
           <div className="navbar">
-            <div className="app-name">{"APP NAME"}</div>
+            <div className="app-name">{"ReactJS App"}</div>
             <Link to="#" className="menu-bars">
               {/* <AiIcons.AiOutlineClose
                 onClick={() =>
