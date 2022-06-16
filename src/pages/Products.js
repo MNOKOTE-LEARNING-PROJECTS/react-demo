@@ -73,6 +73,11 @@ export default function Products() {
       console.log("...pre", [...pre, newData]);
       return [...pre, newData];
     });
+
+    // newMessage((pre) => {
+    //   const newMessage = "1234";
+    //   return [newMessage];
+    // });
   };
 
   const deleteItem = (record) => {
