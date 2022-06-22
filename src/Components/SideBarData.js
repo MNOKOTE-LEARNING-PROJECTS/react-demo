@@ -23,4 +23,10 @@ export const SidebarData = [
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
+  {
+    title: "LifeCycles",
+    path: "/lifecycles",
+    icon: <AiIcons.AiFillHome />,
+    cName: "nav-text",
+  },
 ];

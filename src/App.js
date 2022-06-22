@@ -6,6 +6,7 @@ import Container from "./reusables/container";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Reports from "./pages/Reports";
+import LifeCycles from "./pages/LifeCycle";
 
 // import Navbar from "./Components/Navbar";
 //------------------------------------------------CLASS APP-----------------------------------------------
@@ -39,6 +40,15 @@ function App() {
             element={
               <Container>
                 <Products />
+              </Container>
+            }
+          />
+          <Route
+            path="/lifecycles"
+            exact
+            element={
+              <Container>
+                <LifeCycles />
               </Container>
             }
           />

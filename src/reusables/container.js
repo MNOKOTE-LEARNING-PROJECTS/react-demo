@@ -12,7 +12,7 @@ import { IconContext } from "react-icons";
 import "../Components/Navbar.css";
 import "../App.css";
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 export default class container extends Component {
   constructor(props) {
@@ -75,7 +75,7 @@ export default class container extends Component {
     return (
       <div>
         <AppBar position="static">
-          <Toolbar>
+          <Toolbar className="header">
             <IconButton
               onClick={() => {
                 this.setState({ menuOpen: true });

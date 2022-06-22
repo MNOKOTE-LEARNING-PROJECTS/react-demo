@@ -1,7 +1,7 @@
 import axios from "axios";
-const BOOKS_API = "api/v1/books";
+const BOOKS_API = "api/v1/readers";
 
-class ReportsService {
+class ReadersService {
   constructor() {
     // ApiService.setHeader();
     // ApiService.adminScope();
@@ -12,13 +12,7 @@ class ReportsService {
   }
 
   saveData(payloads) {
-    console.log("data", payloads);
     return axios.post(BOOKS_API, payloads);
-  }
-
-  updateData(payloads) {
-    console.log("data", payloads);
-    return axios.patch(BOOKS_API + "/" + payloads.id, payloads);
   }
 
   deleteData = async (payload) => {
@@ -26,4 +20,4 @@ class ReportsService {
   };
 }
 
-export default new ReportsService();
+export default new ReadersService();

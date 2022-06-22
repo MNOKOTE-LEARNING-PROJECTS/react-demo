@@ -15,30 +15,30 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var ReportsService =
+var ReadersService =
 /*#__PURE__*/
 function () {
-  function ReportsService() {// ApiService.setHeader();
+  function ReadersService() {// ApiService.setHeader();
     // ApiService.adminScope();
 
-    _classCallCheck(this, ReportsService);
+    _classCallCheck(this, ReadersService);
   }
 
-  _createClass(ReportsService, [{
+  _createClass(ReadersService, [{
     key: "all",
     value: function all() {
-      return _axios["default"].get("api/v1/books");
+      return _axios["default"].get("api/v1/readers");
     }
   }, {
     key: "saveData",
     value: function saveData(payloads) {
-      return _axios["default"].post("api/v1/books", payloads);
+      return _axios["default"].post("api/v1/readers", payloads);
     }
   }]);
 
-  return ReportsService;
+  return ReadersService;
 }();
 
-var _default = new ReportsService();
+var _default = new ReadersService();
 
 exports["default"] = _default;
